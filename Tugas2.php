@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -8,7 +7,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   </head>
   <body>
+    
   <div class="container px-5 my-5">
+    <h3 align="center">Data Gaji Pegawai</h3>
     <form id="contactForm" data-sb-form-api-token="API_TOKEN" method='POST'>
         <div class="form-floating mb-3">
             <input class="form-control" name="namaPegawai" type="text" placeholder="Nama Pegawai" data-sb-validations="required" />
@@ -73,6 +74,9 @@
         </div>
         <div class="d-grid">
             <button class="btn btn-primary btn-lg" name="simpan" type="submit">Simpan</button>
+
+
+
         </div>
     </form>
 </div>
@@ -110,22 +114,46 @@
 
 
     if (isset($button)) { ?>
-        Nama Pegawai : <?= $nama ?>
-        <br>Agama   :   <?= $agama ?>
-        <br>Jabatan :   <?= $jabatan ?>
-        <br>Status  :   <?= $status ?>
-        <br>jumlah Anak  :  <?= $jAnak ?>
-        <br>Gaji Pokok   :   <?= number_format($gapok, 2, ',', '.'); ?>
-        <br>Tunjangan Jabatan   :   <?= number_format($tunjab, 2, ',', '.'); ?>
-        <br>Tunjangan Keluarga   :   <?= number_format($tunjkel, 2, ',', '.'); ?>
-        <br>Gaji Kotor   :   <?= number_format($gajikotor, 2, ',', '.'); ?>
-        <br>Zakat Profesi  : <?= number_format($Zprofesi, 2, ',', '.'); ?>
-        <br>Take Home Pay  : <?= number_format($thp, 2, ',', '.'); ?>
-        
-
-
+        <section id="table">
+        <table class="table table-success table-striped">
+            <thead>
+                <tr>
+                    <th>Nama Pegawai</th>
+                    <th>Agama</th>
+                    <th>Jabatan</th>
+                    <th>Status</th>
+                    <th>Jumlah anak</th>
+                    <th>Gaji pokok</th>
+                    <th>Tunjangan Jabatan</th>
+                    <th>Tunjangan Keluarga</th>
+                    <th>Gaji Kotor</th>
+                    <th>Zakat profesi</th>
+                    <th>Take Home Pay</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><?= $nama ?></td>
+                    <td><?= $agama ?></td>
+                    <td><?= $jabatan ?></td>
+                    <td><?= $status ?></td>
+                    <td><?= $jAnak ?></td>
+                    <td><?= number_format($gapok, 2, ',', '.'); ?></td>
+                    <td><?= number_format($tunjab, 2, ',', '.'); ?></td>
+                    <td><?= number_format($tunjkel, 2, ',', '.'); ?></td>
+                    <td><?= number_format($gajikotor, 2, ',', '.'); ?></td>
+                    <td><?= number_format($Zprofesi, 2, ',', '.'); ?></td>
+                    <td><?= number_format($thp, 2, ',', '.'); ?></td>
+                </tr>
+            </tbody>
+          </table>
+    </section>
     <?php } ?>
     
+
+
+
+
 
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
